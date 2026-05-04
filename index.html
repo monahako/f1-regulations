@@ -46,12 +46,14 @@
   </header>
 
   <main>
-    <div class="car-image-wrap">
-      <img id="car-image" class="car-image-single" src="" alt="F1カーイメージ">
-      <p id="year-label" class="car-image-label"></p>
-    </div>
+    <div class="layout-single">
 
-    <div class="accordion" id="accordion">
+      <div class="car-image-wrap">
+        <img id="car-image" class="car-image-single" src="" alt="F1カーイメージ">
+        <p id="year-label" class="car-image-label"></p>
+      </div>
+
+      <div class="accordion" id="accordion">
 
       <div class="accordion-item" data-category="engine">
         <button class="accordion-header" aria-expanded="false">
@@ -109,7 +111,9 @@
         <div class="accordion-body" id="section-environment"></div>
       </div>
 
-    </div>
+      </div><!-- /.accordion -->
+
+    </div><!-- /.layout-single -->
   </main>
 
   <script defer src="app.js"></script>

@@ -105,16 +105,33 @@ select:focus {
 
 /* ── メインコンテンツ共通 ── */
 main {
-  padding: 32px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* ── 単年表示レイアウト（左：画像、右：アコーディオン） ── */
+.layout-single {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.layout-single .car-image-wrap {
+  flex: 0 0 50%;
+  position: sticky;
+  top: 16px;
+  text-align: left;
+}
+
+.layout-single .accordion {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ── 車体画像（単年表示） ── */
 .car-image-single {
   display: block;
-  width: 65%;
-  margin: 0 auto 32px;
+  width: 100%;
+  margin: 0;
   object-fit: contain;
 }
 
