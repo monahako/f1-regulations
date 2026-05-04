@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\keisuke\\\\Documents\\\\10_Skills\\\\10_IT\\\\51_Claude\\\\01_ClaudeCode\\\\f1-regulations\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(python3 -c \"import json; data = json.load\\(open\\('diffs/diffs.json'\\)\\); print\\(f'Total diff entries: {len\\(data\\)}'\\); print\\(f'Sample keys: {list\\(data.keys\\(\\)\\)[:5]}'\\)\")"
+    ]
+  }
+}

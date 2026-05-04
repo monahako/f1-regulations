@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Regulation Compare</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <span class="header-title">🏎 F1 Regulation Compare</span>
+    <div class="header-controls">
+      <select id="year-a">
+        <option value="2000">2000年</option>
+        <option value="2001">2001年</option>
+        <option value="2002">2002年</option>
+        <option value="2003">2003年</option>
+        <option value="2004">2004年</option>
+        <option value="2005">2005年</option>
+        <option value="2006">2006年</option>
+        <option value="2007">2007年</option>
+        <option value="2008">2008年</option>
+        <option value="2009">2009年</option>
+        <option value="2010">2010年</option>
+        <option value="2011">2011年</option>
+        <option value="2012">2012年</option>
+        <option value="2013">2013年</option>
+        <option value="2014">2014年</option>
+        <option value="2015">2015年</option>
+        <option value="2016">2016年</option>
+        <option value="2017">2017年</option>
+        <option value="2018">2018年</option>
+        <option value="2019">2019年</option>
+        <option value="2020" selected>2020年</option>
+        <option value="2021">2021年</option>
+        <option value="2022">2022年</option>
+        <option value="2023">2023年</option>
+        <option value="2024">2024年</option>
+        <option value="2025">2025年</option>
+        <option value="2026">2026年</option>
+      </select>
+      <span style="color: #fff; font-weight: 700;">←→</span>
+      <select id="year-b">
+        <option value="2000">2000年</option>
+        <option value="2001">2001年</option>
+        <option value="2002">2002年</option>
+        <option value="2003">2003年</option>
+        <option value="2004">2004年</option>
+        <option value="2005">2005年</option>
+        <option value="2006">2006年</option>
+        <option value="2007">2007年</option>
+        <option value="2008">2008年</option>
+        <option value="2009">2009年</option>
+        <option value="2010">2010年</option>
+        <option value="2011">2011年</option>
+        <option value="2012">2012年</option>
+        <option value="2013">2013年</option>
+        <option value="2014">2014年</option>
+        <option value="2015">2015年</option>
+        <option value="2016">2016年</option>
+        <option value="2017">2017年</option>
+        <option value="2018">2018年</option>
+        <option value="2019">2019年</option>
+        <option value="2020">2020年</option>
+        <option value="2021">2021年</option>
+        <option value="2022">2022年</option>
+        <option value="2023">2023年</option>
+        <option value="2024">2024年</option>
+        <option value="2025">2025年</option>
+        <option value="2026" selected>2026年</option>
+      </select>
+      <button class="btn-primary" id="compare-btn">比較する</button>
+      <a class="header-nav-link" href="index.html">← 単年表示</a>
+    </div>
+  </header>
+
+  <main>
+    <p class="timeline-note" id="timeline-note"></p>
+
+    <div class="compare-content" id="compare-content">
+
+      <!-- 車体画像 -->
+      <div class="car-images-compare">
+        <div class="car-image-compare-wrap">
+          <img id="car-image-a" src="" alt="年Aのカーイメージ">
+          <p class="car-image-label" id="label-a"></p>
+        </div>
+        <div class="car-image-compare-wrap">
+          <img id="car-image-b" src="" alt="年Bのカーイメージ">
+          <p class="car-image-label" id="label-b"></p>
+        </div>
+      </div>
+
+      <!-- ① エンジン／パワーユニット -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">① エンジン／パワーユニット</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-engine-a"></div>
+          <div class="compare-col" id="col-engine-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-engine"></p>
+          <ul class="diff-details" id="diff-details-engine"></ul>
+        </div>
+      </section>
+
+      <!-- ② 車体／シャシー -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">② 車体／シャシー</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-chassis-a"></div>
+          <div class="compare-col" id="col-chassis-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-chassis"></p>
+          <ul class="diff-details" id="diff-details-chassis"></ul>
+        </div>
+      </section>
+
+      <!-- ③ 空力・タイヤ・ホイール -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">③ 空力・タイヤ・ホイール</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-aero-a"></div>
+          <div class="compare-col" id="col-aero-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-aero"></p>
+          <ul class="diff-details" id="diff-details-aero"></ul>
+        </div>
+      </section>
+
+      <!-- ④ レースルール（Format） -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">④ レースルール（Format）</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-race_rules-a"></div>
+          <div class="compare-col" id="col-race_rules-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-race_rules"></p>
+          <ul class="diff-details" id="diff-details-race_rules"></ul>
+        </div>
+      </section>
+
+      <!-- ⑤ 安全・健康 -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">⑤ 安全・健康</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-safety-a"></div>
+          <div class="compare-col" id="col-safety-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-safety"></p>
+          <ul class="diff-details" id="diff-details-safety"></ul>
+        </div>
+      </section>
+
+      <!-- ⑥ コスト・開発制限 -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">⑥ コスト・開発制限</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-cost-a"></div>
+          <div class="compare-col" id="col-cost-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-cost"></p>
+          <ul class="diff-details" id="diff-details-cost"></ul>
+        </div>
+      </section>
+
+      <!-- ⑦ メディア・運営・公平性 -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">⑦ メディア・運営・公平性</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-media-a"></div>
+          <div class="compare-col" id="col-media-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-media"></p>
+          <ul class="diff-details" id="diff-details-media"></ul>
+        </div>
+      </section>
+
+      <!-- ⑧ 環境・サステナビリティ -->
+      <section class="compare-section">
+        <h2 class="compare-section-title">⑧ 環境・サステナビリティ</h2>
+        <div class="compare-columns">
+          <div class="compare-col" id="col-environment-a"></div>
+          <div class="compare-col" id="col-environment-b"></div>
+        </div>
+        <div class="diff-block">
+          <p class="diff-block-title">🔄 変更点</p>
+          <p class="diff-summary" id="diff-summary-environment"></p>
+          <ul class="diff-details" id="diff-details-environment"></ul>
+        </div>
+      </section>
+
+    </div><!-- /.compare-content -->
+  </main>
+
+  <script defer src="compare.js"></script>
+</body>
+</html>
