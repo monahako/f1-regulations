@@ -3,11 +3,11 @@
 /* ── デザイントークン ── */
 :root {
   --color-primary: #E8002D;
-  --color-bg: #15151E;
-  --color-surface: #1e1e2e;
-  --color-border: #2e2e42;
-  --color-text: #FFFFFF;
-  --color-text-sub: #B0B0B0;
+  --color-bg: #FFFFFF;
+  --color-surface: #F5F5F5;
+  --color-border: #E0E0E0;
+  --color-text: #1A1A1A;
+  --color-text-sub: #666666;
 }
 
 /* ── リセット・基盤 ── */
@@ -38,7 +38,7 @@ header {
 .header-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: #FFFFFF;
   white-space: nowrap;
   text-decoration: none;
 }
@@ -50,7 +50,7 @@ header {
 }
 
 .header-nav-link {
-  color: var(--color-text);
+  color: #FFFFFF;
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
@@ -73,7 +73,7 @@ select {
   font-size: 0.95rem;
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a1a1a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
   padding-right: 30px;
@@ -189,7 +189,7 @@ main {
 }
 
 .accordion-header:hover {
-  background-color: #26263a;
+  background-color: #EBEBEB;
 }
 
 .accordion-header::after {
@@ -278,7 +278,7 @@ main {
 /* ── 差分ブロック ── */
 .diff-block {
   padding: 16px 20px;
-  background-color: #1a1a2a;
+  background-color: #FFF5F5;
 }
 
 .diff-block-title {
